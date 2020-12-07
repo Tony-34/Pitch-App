@@ -4,7 +4,7 @@ from app.models import User
 
 class UserTest(unittest.TestCase):
     def setUp(self):
-        self.new_user = User(username='moringa',password='Tonny34')
+        self.new_user = User(username='moringa',password='tonny34')
 
     def test_password_setter(self):
         self.assertTrue(self.new_user.password is not None)
