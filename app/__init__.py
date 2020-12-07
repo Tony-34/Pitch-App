@@ -27,7 +27,6 @@ def create_app(config_name):
 
     login_manager.init_app(app)
     db.init_app(app)
-    db.create_all()
     bootstap.init_app(app)
     configure_uploads(app,photos)
     mail.init_app(app)
