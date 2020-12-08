@@ -20,7 +20,7 @@ class ProdConfig(Config):
     # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URI")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:1738@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:@localhost/pitch'
     DEBUG = True
 
 config_options = {
