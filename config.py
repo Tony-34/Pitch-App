@@ -6,7 +6,9 @@ class Config:
     
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS=True
-    SECRET_KEY=os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.urandom(32)
+    # app.config['SECRET_KEY'] = SECRET_KEY
+    # SECRET_KEY=os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
@@ -16,11 +18,11 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://tony:Avamara34@localhost/pitch_test'
-    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URI")
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Avamara34@localhost/pitch_test'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://tony:Avamara34@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Avamara34@localhost/pitch'
     DEBUG = True
 
 config_options = {
